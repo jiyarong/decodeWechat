@@ -7,12 +7,12 @@ import(
 )
 
 type DecodeWechatEncrypted struct {
-	appId string
-	sessionKey string
+	AppId string
+	SessionKey string
 }
 
-func (decoder *DecodeWechatEncrypted) decryptData(encryptedData string, iv string) string {
-	sessionKey, _ := base64.StdEncoding.DecodeString(decoder.sessionKey)
+func (decoder *DecodeWechatEncrypted) DecryptData(encryptedData string, iv string) string {
+	sessionKey, _ := base64.StdEncoding.DecodeString(decoder.SessionKey)
 	_encryptedData, _ := base64.StdEncoding.DecodeString(encryptedData)
 	_iv, _ := base64.StdEncoding.DecodeString(iv)
 
